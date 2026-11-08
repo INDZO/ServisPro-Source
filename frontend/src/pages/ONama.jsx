@@ -1,4 +1,4 @@
-import "../styles/ONama.css";
+import "../styles/Onama.css";
 import inasImg from "../assets/inas.jpg";
 import edinImg from "../assets/edin.jpg";
 import aldinaImg from "../assets/aldina.jpg";

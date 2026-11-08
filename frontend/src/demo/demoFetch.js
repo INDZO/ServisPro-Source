@@ -25,11 +25,11 @@ export async function demoFetch(input, options = {}) {
   if (path === "/api/publicservices" && method === "GET") {
     const term = (query.get("search") || "").trim().toLowerCase();
     const city = (query.get("city") || "").trim().toLowerCase();
-    const day = query.get("workingDay");
+    const day = ["ned", "pon", "uto", "sre", "cet", "pet", "sub"].indexOf(query.get("workingDay"));
     const ids = query.getAll("serviceTypeIds").map(Number);
     const result = providers.filter(p => (!term || (p.name + " " + p.description).toLowerCase().includes(term)) &&
       (!city || p.city.toLowerCase().includes(city)) &&
-      (!day || p.workingDays.includes(Number(day))) && ids.every(id => p.ids.includes(id)));
+      (day < 0 || p.workingDays.includes(day)) && ids.every(id => p.ids.includes(id)));
     if (query.get("sortBy") === "name" || query.get("sortBy") === "city") {
       const field = query.get("sortBy");
       const direction = query.get("sortDirection") === "desc" ? -1 : 1;
