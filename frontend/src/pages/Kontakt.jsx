@@ -1,3 +1,4 @@
+import { apiFetch } from "../api/baseUrl";
 import { useMemo, useState } from "react";
 import "../styles/Kontakt.css";
 import { API_BASE_URL } from "../api/baseUrl.js";
@@ -87,7 +88,7 @@ export default function Kontakt() {
         message: normalize(values.message), 
       };
 
-      const res = await fetch(CONTACT_ENDPOINT, {
+      const res = await apiFetch(CONTACT_ENDPOINT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

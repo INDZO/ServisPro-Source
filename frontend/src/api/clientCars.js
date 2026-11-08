@@ -1,10 +1,11 @@
+import { apiFetch } from "./baseUrl";
 import { API_BASE_URL } from "./baseUrl";
 import { getAuth, handleUnauthorized } from "../auth/auth";
 
 async function requestAuthed(path, options = {}) {
   const { token } = getAuth();
 
-  const res = await fetch(`${API_BASE_URL}${path}`, {
+  const res = await apiFetch(`${API_BASE_URL}${path}`, {
     ...options,
     headers: {
       ...(options.headers || {}),

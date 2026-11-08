@@ -1,3 +1,4 @@
+import { apiFetch } from "./baseUrl";
 import { API_BASE_URL } from "./baseUrl";
 import { getAuth, handleUnauthorized } from "../auth/auth";
 
@@ -23,7 +24,7 @@ async function parseJsonOrText(res) {
 
 export const ReviewApi = {
   getMine: async (serviceId) => {
-    const res = await fetch(`${API_BASE_URL}/api/review/mine/${serviceId}`, {
+    const res = await apiFetch(`${API_BASE_URL}/api/review/mine/${serviceId}`, {
       method: "GET",
       headers: authHeaders(),
     });
@@ -46,7 +47,7 @@ export const ReviewApi = {
       comment: comment?.trim() ? comment.trim() : null,
     };
 
-    const res = await fetch(`${API_BASE_URL}/api/review`, {
+    const res = await apiFetch(`${API_BASE_URL}/api/review`, {
       method: "POST",
       headers,
       body: JSON.stringify(payload),
@@ -68,7 +69,7 @@ export const ReviewApi = {
       comment: comment?.trim() ? comment.trim() : null,
     };
 
-    const res = await fetch(`${API_BASE_URL}/api/review/${reviewId}`, {
+    const res = await apiFetch(`${API_BASE_URL}/api/review/${reviewId}`, {
       method: "PUT",
       headers,
       body: JSON.stringify(payload),
@@ -82,7 +83,7 @@ export const ReviewApi = {
   },
 
   remove: async (reviewId) => {
-    const res = await fetch(`${API_BASE_URL}/api/review/${reviewId}`, {
+    const res = await apiFetch(`${API_BASE_URL}/api/review/${reviewId}`, {
       method: "DELETE",
       headers: authHeaders(),
     });

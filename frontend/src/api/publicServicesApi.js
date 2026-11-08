@@ -1,7 +1,8 @@
+import { apiFetch } from "./baseUrl";
 import { API_BASE_URL } from "./baseUrl";
 
 async function request(path) {
-  const res = await fetch(`${API_BASE_URL}${path}`);
+  const res = await apiFetch(`${API_BASE_URL}${path}`);
 
   const ct = res.headers.get("content-type") || "";
   const isJson = ct.includes("application/json");

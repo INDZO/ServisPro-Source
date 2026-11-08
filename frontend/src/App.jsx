@@ -1,3 +1,5 @@
+import { DEMO_MODE } from "./api/baseUrl";
+import { setAuth } from "./auth/auth";
 import { Link, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 
@@ -16,18 +18,24 @@ export default function App() {
   return (
     <div className="app">
       <Navbar />
+      {DEMO_MODE && <aside className="demo-banner" aria-label="Demo mode">
+        <div><strong>Demo Mode</strong> · Fiktivni podaci. Zahtevi važe samo do osvežavanja.</div>
+        <Link to="/auto-servisi" onClick={() => setAuth({ token: "servispro-local-preview", role: "client", userId: 1 })}>
+          Isprobaj zakazivanje ↗
+        </Link>
+      </aside>}
 
       <main className="main">
         <Routes>
           <Route path="/" element={<Pocetna />} />
           <Route path="/auto-servisi" element={<AutoServisi />} />
           <Route path="/o-nama" element={<ONama />} />
-          <Route path="/postani-clan" element={<PostaniClan />} />
-          <Route path="/uloguj-se" element={<UlogujSe />} />
-          <Route path="/kontakt" element={<Kontakt />} />
+          <Route path="/postani-clan" element={DEMO_MODE ? <Navigate to="/auto-servisi" replace /> : <PostaniClan />} />
+          <Route path="/uloguj-se" element={DEMO_MODE ? <Navigate to="/auto-servisi" replace /> : <UlogujSe />} />
+          <Route path="/kontakt" element={DEMO_MODE ? <Navigate to="/auto-servisi" replace /> : <Kontakt />} />
           <Route path="/auto-servis/:id" element={<AutoServis />} />
           <Route path="/dashboard/*" element={
-                <ProtectedRoute>
+                DEMO_MODE ? <Navigate to="/auto-servisi" replace /> : <ProtectedRoute>
                   <Dashboard />
                 </ProtectedRoute>
               }

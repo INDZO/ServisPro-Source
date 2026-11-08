@@ -1,3 +1,4 @@
+import { DEMO_MODE } from "../api/baseUrl";
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import FullCalendar from "@fullcalendar/react";
@@ -425,6 +426,14 @@ export default function AppointmentSchedulerModal({
                   firstDay={1}
                   validRange={{ start: range.today, end: range.endExclusive }}
                   dateClick={onDateClick}
+                  dayCellContent={DEMO_MODE ? (arg) => {
+                    const day = isoDay(arg.date);
+                    const disabled = isOutOfRange(day) || isNotWorkingDay(day) || unavailableSet.has(day);
+                    return <button type="button" className="demo-day" aria-label={"Izaberi " + day}
+                      disabled={disabled} onClick={(event) => { event.stopPropagation(); onDateClick({ dateStr: day }); }}>
+                      {arg.dayNumberText}
+                    </button>;
+                  } : undefined}
                   dayCellClassNames={(arg) => {
                     const key = isoDay(arg.date);
 
@@ -508,9 +517,9 @@ export default function AppointmentSchedulerModal({
                       </div>
                     ) : null}
 
-                    <button type="button" className="btn-ghost" onClick={goToCars}>
+                    {!DEMO_MODE && <button type="button" className="btn-ghost" onClick={goToCars}>
                       Dodaj/uredi automobile
-                    </button>
+                    </button>}
                   </div>
                 </div>
 
@@ -556,7 +565,7 @@ export default function AppointmentSchedulerModal({
                   </div>
                 </div>
 
-                <div className="sp-formRow">
+                {!DEMO_MODE && <div className="sp-formRow">
                   <label className="sp-formLabel" htmlFor="appt-desc">
                     Opis (opciono)
                   </label>
@@ -570,7 +579,7 @@ export default function AppointmentSchedulerModal({
                       placeholder="Npr. škripanje, vibracije, servis..."
                     />
                   </div>
-                </div>
+                </div>}
               </div>
 
               <div className="sp-modalFooter">

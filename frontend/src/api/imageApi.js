@@ -1,3 +1,4 @@
+import { apiFetch } from "./baseUrl";
 import { API_BASE_URL } from "./baseUrl";
 
 async function parseResponse(res) {
@@ -11,7 +12,7 @@ export const ImageApi = {
     const fd = new FormData();
     fd.append("file", file);
 
-    const res = await fetch(`${API_BASE_URL}/api/Image/upload`, {
+    const res = await apiFetch(`${API_BASE_URL}/api/Image/upload`, {
       method: "POST",
       body: fd,
     });

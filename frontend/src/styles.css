@@ -696,3 +696,8 @@ body{
 button {
   -webkit-text-fill-color: inherit;
 }
+.demo-banner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px 20px; padding:12px max(20px, calc((100% - 1120px)/2)); background:#fff2de; color:#271b15; border-bottom:1px solid #eab97e; font-size:.9rem; }
+.demo-banner a { font-weight:750; color:#713400; text-decoration:underline; }
+
+.demo-day { background:none; border:0; color:inherit; min-width:24px; min-height:25px; font:inherit; cursor:pointer; }
+.demo-day:disabled { cursor:default; opacity:.55; }

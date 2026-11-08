@@ -1,7 +1,8 @@
+import { apiFetch } from "./baseUrl";
 import { API_BASE_URL } from "./baseUrl";
 
 async function request(path, options) {
-  const res = await fetch(`${API_BASE_URL}${path}`, options);
+  const res = await apiFetch(`${API_BASE_URL}${path}`, options);
   const text = await res.text().catch(() => "");
 
   if (!res.ok) {
