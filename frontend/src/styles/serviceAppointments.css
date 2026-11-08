@@ -1,0 +1,431 @@
+.sappt {
+  padding: 6px 0 10px;
+}
+
+.sappt-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.sappt-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.sappt-headRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.sappt-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sappt-pill {
+  border: 1px solid var(--card-border);
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.sappt-pill:hover {
+  background: var(--light-bg);
+}
+
+.sappt-pill.is-active {
+  border-color: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.06);
+}
+
+.sappt-btn {
+  border: 1px solid var(--card-border);
+  background: #fff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 120ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.sappt-btn:hover {
+  background: var(--light-bg);
+}
+
+.sappt-btn:active {
+  transform: translateY(1px);
+}
+
+.sappt-btn.is-primary {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.sappt-btn.is-danger {
+  border-color: rgba(220, 38, 38, 0.35);
+  background: rgba(220, 38, 38, 0.06);
+}
+
+.sappt-btn.is-danger:hover {
+  background: rgba(220, 38, 38, 0.1);
+}
+
+.sappt-alert {
+  border: 1px solid var(--card-border);
+  background: var(--light-bg);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.sappt-alert.is-error {
+  background: rgba(220, 38, 38, 0.08);
+  border-color: rgba(220, 38, 38, 0.2);
+}
+
+.sappt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sappt-item {
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  background: #fff;
+  padding: 12px;
+}
+
+.sappt-itemTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sappt-itemTitle {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.sappt-meta {
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.sappt-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.sappt-badge {
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  border: 1px solid var(--card-border);
+  white-space: nowrap;
+}
+
+.sappt-badge.is-requested { background: rgba(37, 99, 235, 0.08); border-color: rgba(37, 99, 235, 0.25); }
+.sappt-badge.is-accepted { background: rgba(16, 185, 129, 0.10); border-color: rgba(16, 185, 129, 0.25); }
+.sappt-badge.is-inservice { background: rgba(16, 185, 129, 0.10); border-color: rgba(16, 185, 129, 0.25); }
+.sappt-badge.is-inprogress { background: rgba(245, 158, 11, 0.12); border-color: rgba(245, 158, 11, 0.30); }
+.sappt-badge.is-completed { background: rgba(16, 185, 129, 0.10); border-color: rgba(16, 185, 129, 0.25); }
+.sappt-badge.is-canceled { background: rgba(220, 38, 38, 0.08); border-color: rgba(220, 38, 38, 0.25); }
+.sappt-badge.is-rejected { background: rgba(220, 38, 38, 0.08); border-color: rgba(220, 38, 38, 0.25); }
+
+
+.sappt-divider {
+  border-top: 1px solid var(--card-border);
+  margin: 12px 0;
+}
+
+.sappt-modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 999;
+}
+
+.sappt-modal {
+  width: min(760px, 100%);
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  padding: 14px;
+  max-height: 86vh;
+  overflow: auto;
+}
+
+.sappt-modalTitle {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.sappt-modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.sappt-field {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.sappt-label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.sappt-input,
+.sappt-textarea {
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.sappt-textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.sappt-modal--wide {
+  width: min(980px, 100%);
+}
+
+
+.sappt-calHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sappt-calSub {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.sappt-calHeaderActions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.sappt-dayState {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-left: 8px;
+  font-size: 12px;
+  border: 1px solid var(--card-border);
+}
+
+.sappt-dayState.is-open {
+  background: rgba(16, 185, 129, 0.10);
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.sappt-dayState.is-closed {
+  background: rgba(220, 38, 38, 0.08);
+  border-color: rgba(220, 38, 38, 0.25);
+}
+
+.sappt-manageDay {
+  margin-top: 10px;
+  border: 1px solid var(--card-border);
+  background: var(--light-bg);
+  border-radius: 14px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.sappt-manageLeft {
+  display: grid;
+  gap: 6px;
+}
+
+.sappt-manageRight {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 720px) {
+  .sappt-manageDay {
+    grid-template-columns: 1fr;
+  }
+  .sappt-dayBadges {
+    display: inline-flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.sappt-dayClosedLabel{
+    display: none;
+}
+}
+@media(max-width: 900px){
+.sappt-dayCellTop{
+    flex-wrap: wrap-reverse;
+    margin-bottom: 10px;
+}
+}
+
+.sappt-calWrap {
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.fc .sappt-daySelected .fc-daygrid-day-frame {
+  outline: 2px solid rgba(0, 0, 0, 0.35);
+  outline-offset: -2px;
+  border-radius: 10px;
+}
+
+.fc .sappt-dayClosed .fc-daygrid-day-frame {
+  background: rgba(220, 38, 38, 0.06);
+}
+
+.sappt-dayCell {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sappt-dayCellTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.sappt-dayNum {
+  font-weight: 650;
+}
+
+.sappt-dayClosedLabel {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(220, 38, 38, 0.28);
+  background: rgba(220, 38, 38, 0.10);
+  color: #111;
+}
+
+.sappt-dayCellBottom {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sappt-dayBadges {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.sappt-dayBadge {
+  min-width: 18px;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 750;
+  border: 1px solid var(--card-border);
+  line-height: 1;
+}
+
+.sappt-dayBadge.is-blue {
+  background: rgba(37, 99, 235, 0.14);
+  border-color: rgba(37, 99, 235, 0.30);
+}
+
+.sappt-dayBadge.is-green {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.sappt-dayBadge.is-red {
+  background: rgba(220, 38, 38, 0.14);
+  border-color: rgba(220, 38, 38, 0.30);
+}
+
+.sappt-itemHeaderRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.sappt-meta--grid {
+  margin-top: 8px;
+  display: grid;
+  gap: 8px;
+}
+
+.sappt-metaRow {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 10px;
+}
+
+.sappt-metaRow--full {
+  grid-column: 1 / -1;
+}
+
+.sappt-metaLabel {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.sappt-metaVal {
+  color: var(--text);
+  font-size: 13px;
+}
+
+.sappt-item--nice {
+  padding: 14px;
+}
+
+.sappt-item--compact {
+  padding: 12px;
+}
+

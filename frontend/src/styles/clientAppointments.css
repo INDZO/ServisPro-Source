@@ -1,0 +1,231 @@
+.cappt {
+  display: grid;
+  gap: 14px;
+}
+
+.cappt-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cappt-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.cappt-sub {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.cappt-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cappt-pill {
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 13px;
+  color: #111;
+}
+
+.cappt-pill:hover {
+  background: rgba(0,0,0,0.03);
+}
+
+.cappt-pill.is-active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.cappt-alert {
+  border-radius: 14px;
+  border: 1px solid var(--card-border);
+  background: var(--light-bg);
+  padding: 12px;
+  font-size: 13px;
+}
+
+.cappt-alert.is-error {
+  border-color: rgba(220, 38, 38, 0.25);
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.cappt-list {
+  display: grid;
+  gap: 10px;
+}
+
+.cappt-item {
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  background: #fff;
+  padding: 14px;
+}
+
+.cappt-item-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cappt-service {
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.cappt-meta {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.cappt-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  height: 26px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(0,0,0,0.04);
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.cappt-badge.is-requested { background: rgba(59,130,246,0.10); border-color: rgba(59,130,246,0.20); }
+.cappt-badge.is-accepted { background: rgba(16,185,129,0.10); border-color: rgba(16,185,129,0.20); }
+.cappt-badge.is-inservice { background: rgba(245,158,11,0.12); border-color: rgba(245,158,11,0.22); }
+.cappt-badge.is-inprogress { background: rgba(236,72,153,0.10); border-color: rgba(236,72,153,0.20); }
+.cappt-badge.is-completed { background: rgba(34,197,94,0.10); border-color: rgba(34,197,94,0.20); }
+.cappt-badge.is-canceled { background: rgba(100,116,139,0.12); border-color: rgba(100,116,139,0.22); }
+.cappt-badge.is-rejected { background: rgba(220,38,38,0.10); border-color: rgba(220,38,38,0.20); }
+
+.cappt-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cappt-btn {
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.cappt-btn:hover {
+  background: rgba(0,0,0,0.03);
+}
+
+.cappt-btn.is-danger {
+  border-color: rgba(220,38,38,0.25);
+  background: rgba(220,38,38,0.06);
+}
+
+.cappt-btn.is-danger:hover {
+  background: rgba(220,38,38,0.10);
+}
+
+.cappt-modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 80;
+}
+
+.cappt-modal {
+  width: min(520px, 100%);
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  background: #fff;
+  padding: 14px;
+}
+
+.cappt-modalTitle {
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.cappt-modalSub {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.cappt-modalAlert {
+  margin-top: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  background: var(--light-bg);
+  padding: 10px;
+  font-size: 13px;
+}
+
+.cappt-modalAlert.is-error {
+  border-color: rgba(220, 38, 38, 0.25);
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.cappt-modalAlert.is-success {
+  border-color: rgba(16, 185, 129, 0.25);
+  background: rgba(16, 185, 129, 0.10);
+}
+
+.cappt-textarea {
+  margin-top: 12px;
+  width: 100%;
+  min-height: 90px;
+  resize: vertical;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  padding: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.cappt-textarea:focus {
+  border-color: rgba(0,0,0,0.25);
+}
+
+.cappt-modalActions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@media (max-width: 560px) {
+  .cappt-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
