@@ -18,7 +18,13 @@ Customers can browse workshops, manage vehicles and request appointments. Worksh
 
 ## Booking demo mode
 
-[Open the live frontend demo ↗](https://indzo-servispro-demo.vercel.app/) · In `frontend/`, run `npm ci` and `npm run build:demo`, then `npm run preview`. Use the demo banner to browse fictional workshops, filter the catalog, inspect a provider, and submit a sample appointment through the original scheduler. Requests stay in browser memory and reset on refresh. The demo has no backend, database, accounts, or external integrations. The normal frontend build and ASP.NET Core setup below are separate.
+[Open the live frontend demo ↗](https://indzo-servispro-demo.vercel.app/)
+
+**Interactive frontend demo · Fictional data · No live backend**
+
+Browse sample workshops, filter services, and submit a sample appointment in the original React scheduler. Actions stay in browser memory and reset on refresh. This repository also contains the actual ASP.NET Core API and EF Core migrations.
+
+To run the demo locally, run `npm ci`, `npm run build:demo`, and `npm run preview` in `frontend/`.
 
 ## Local development
 
